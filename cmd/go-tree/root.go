@@ -38,6 +38,7 @@ func init() {
 	flags[constant.Output] = goTree.PersistentFlags().StringP(constant.Output, "o", "", "File path to write output")
 	flags[constant.Root] = goTree.PersistentFlags().StringP(constant.Root, "r", fmt.Sprintf(".%s", constant.Seperator), "Root path of the tree")
 	flags[constant.Level] = goTree.PersistentFlags().IntP(constant.Level, "l", 0, "Max level of tree depth")
+	flags[constant.JSON] = goTree.PersistentFlags().BoolP(constant.JSON, "", false, "Flag to output as json")
 }
 
 // Execute .. executes cli commands

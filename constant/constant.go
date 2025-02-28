@@ -19,5 +19,6 @@ const (
 	Output    = "output"
 	Root      = "root"
 	Level     = "level"
+	JSON      = "json"
 	Seperator = string(os.PathSeparator)
 )

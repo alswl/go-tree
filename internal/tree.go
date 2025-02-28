@@ -3,6 +3,7 @@ package internal
 import (
 	"bytes"
 	"fmt"
+	"io"
 	"os"
 	"runtime"
 
@@ -59,14 +60,26 @@ func (t tree) draw() {
 		fmt.Println(err)
 	}
 
-	if outputFile := *(t.flags[constant.Output].(*string)); outputFile != "" {
-		buf := new(bytes.Buffer)
-		t.root.draw(buf, t.flags)
+	isJSON := *(t.flags[constant.JSON].(*bool))
+	var output io.Writer
+	var buf *bytes.Buffer
+	outputFile := *(t.flags[constant.Output].(*string))
+
+	if outputFile != "" {
+		buf = new(bytes.Buffer)
+		output = buf
+	} else {
+		output = colorable.NewColorableStdout()
+	}
+	if isJSON {
+		t.root.drawJson(output, t.flags)
+	} else {
+		t.root.draw(output, t.flags)
+	}
+	if outputFile != "" {
 		if err := writeToFile(buf.String(), outputFile); err != nil {
 			fmt.Println(err)
 		}
-	} else {
-		t.root.draw(colorable.NewColorableStdout(), t.flags)
 	}
 
 	if hasNumber := *(t.flags[constant.Number].(*bool)); hasNumber {

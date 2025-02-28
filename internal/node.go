@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 
@@ -22,6 +23,25 @@ type node struct {
 	path  string
 	total map[string]int
 	info  os.FileInfo
+}
+
+type jnode struct {
+	Files []string          `json:"f,omitempty"`
+	Dirs  map[string]*jnode `json:",omitempty"`
+}
+
+func (j *jnode) MarshalJSON() ([]byte, error) {
+	if len(j.Dirs) == 0 {
+		return json.Marshal(j.Files)
+	}
+	m := map[string]interface{}{}
+	if len(j.Files) > 0 {
+		m["f"] = j.Files
+	}
+	for k, v := range j.Dirs {
+		m[k] = v
+	}
+	return json.Marshal(m)
 }
 
 func (n *node) buildTree(flags map[string]interface{}) error {
@@ -155,4 +175,29 @@ func (n node) print(wr io.Writer, flags map[string]interface{}) {
 	}
 
 	fmt.Fprintf(wr, "%s%s\n", line, name)
+}
+
+func (n *node) drawJson(w io.Writer, flags map[string]interface{}) {
+	jn := parseJNode(n)
+	if b, err := json.Marshal(jn); err == nil {
+		_, _ = w.Write(b)
+	}
+}
+
+func parseJNode(n *node) *jnode {
+	jn := &jnode{}
+	for _, _n := range n.nodes {
+		if _n.nodes != nil {
+			if jn.Dirs == nil {
+				jn.Dirs = map[string]*jnode{}
+			}
+			jn.Dirs[filepath.Base(_n.path)] = parseJNode(&_n)
+		} else {
+			if jn.Files == nil {
+				jn.Files = []string{}
+			}
+			jn.Files = append(jn.Files, filepath.Base(_n.path))
+		}
+	}
+	return jn
 }

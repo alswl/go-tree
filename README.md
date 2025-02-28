@@ -1,12 +1,11 @@
 # go-tree
-go-tree is a tool which draws a tree of directory structure
+go-tree is a tool which draws a tree of directory structure.
+
+Thanks to original [ibrahimaydinnet/go-tree](https://github.com/ibrahimaydinnet/go-tree).
 
 ## Install
 ```bash
-go get github.com/ibrahimaydinnet/go-tree
-cd <YOUR_GOPATH>/src/github.com/ibrahimaydinnet/go-tree
-go install -mod=vendor
-cp <YOUR_GOPATH>/bin/go-tree <YOUR_GOROOT>/bin/
+go install github.com/alswl/go-tree/cmd/go-tree@latest
 ```
 
 ## Usage
@@ -35,6 +34,7 @@ go-tree [flags]
 -t, --trim            Flag to trim empty directories
 -v, --verbose         Flag to show not formatted sizes
 -w, --win             Flag to list hidden files for windows
+--json                Flag to output as json
 ```
 
 ## Credits
