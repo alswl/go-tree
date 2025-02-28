@@ -2,7 +2,7 @@ package internal
 
 import (
 	"fmt"
-	"github.com/ibrahimaydinnet/go-tree/constant"
+	"github.com/alswl/go-tree/constant"
 	"io"
 	"math"
 	"os"

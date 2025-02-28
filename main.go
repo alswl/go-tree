@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/ibrahimaydinnet/go-tree/cmd"
+	"github.com/alswl/go-tree/cmd"
 )
 
 func main() {

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ibrahimaydinnet/go-tree/constant"
-	"github.com/ibrahimaydinnet/go-tree/internal"
+	"github.com/alswl/go-tree/constant"
+	"github.com/alswl/go-tree/internal"
 	"github.com/spf13/cobra"
 )
 

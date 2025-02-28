@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/ibrahimaydinnet/go-tree/constant"
+	"github.com/alswl/go-tree/constant"
 )
 
 // Node ..
