@@ -3,6 +3,8 @@ package internal
 import (
 	"fmt"
 	"io"
+
+	//nolint: staticcheck
 	"io/ioutil"
 	"os"
 	"path/filepath"

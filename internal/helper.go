@@ -2,11 +2,12 @@ package internal
 
 import (
 	"fmt"
-	"github.com/alswl/go-tree/constant"
 	"io"
 	"math"
 	"os"
 	"strings"
+
+	"github.com/alswl/go-tree/constant"
 )
 
 func search(files []os.FileInfo, subStr string) []os.FileInfo {
