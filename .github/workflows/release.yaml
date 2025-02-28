@@ -36,9 +36,8 @@ jobs:
           GOOS=darwin GOARCH=arm64 make build VERSION=$(cat VERSION)
           GOOS=windows GOARCH=amd64 make build VERSION=$(cat VERSION)
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.CI_GITHUB_TOKEN }}"
-          prerelease: false
+          draft: true
           files: |
             bin/go-tree-v*-*-*
