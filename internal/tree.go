@@ -6,7 +6,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/ibrahimaydinnet/go-tree/constant"
+	"github.com/alswl/go-tree/constant"
 
 	colorable "github.com/mattn/go-colorable"
 )
