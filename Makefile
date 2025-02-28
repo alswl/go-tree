@@ -72,7 +72,7 @@ include hack/makefile-go/_git.mk
 
 .PHONY: install-dev-tools
 install-dev-tools:
-	echo ''
+	bash ./hack/install-dev-tools.sh
 
 include hack/makefile-go/build.mk
 include hack/makefile-go/test.mk
