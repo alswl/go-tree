@@ -7,6 +7,7 @@ Thanks to original [ibrahimaydinnet/go-tree](https://github.com/ibrahimaydinnet/
 ```bash
 go install github.com/alswl/go-tree/cmd/go-tree@latest
 ```
+or download from Github [Releases](https://github.com/alswl/go-tree/releases).
 
 ## Usage
 ```bash
