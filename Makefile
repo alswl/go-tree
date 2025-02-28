@@ -18,7 +18,7 @@ NOW_SHORT := $(shell date +%Y%m%d%H%M)
 
 PROJECT := go-tree
 # Target binaries. You can build multiple binaries for a single project.
-TARGETS := go-tree
+TARGETS := gotree
 
 # Container registries.
 REGISTRIES ?= ""

@@ -5,13 +5,13 @@ Thanks to original [ibrahimaydinnet/go-tree](https://github.com/ibrahimaydinnet/
 
 ## Install
 ```bash
-go install github.com/alswl/go-tree/cmd/go-tree@latest
+go install github.com/alswl/go-tree/cmd/gotree@latest
 ```
 or download from Github [Releases](https://github.com/alswl/go-tree/releases).
 
 ## Usage
 ```bash
-go-tree [flags]
+gotree [flags]
 ```
 ![usage](docs/go-tree.gif)
 
@@ -23,7 +23,7 @@ go-tree [flags]
 -d, --date            Flag to show modified times
 -e, --emoji           Flag to show file and dir emojis (not supported on windows)
 -f, --find string     Substring of file names to find
--h, --help            help for go-tree
+-h, --help            help for gotree
 -j, --justdir         Flag to list just directories
 -l, --level int       Max level of tree depth
 -m, --mode            Flag to show permission modes

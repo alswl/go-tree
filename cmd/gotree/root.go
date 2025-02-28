@@ -12,9 +12,9 @@ import (
 var flags map[string]interface{}
 
 var goTree = &cobra.Command{
-	Use:   "go-tree",
-	Short: "go-tree is a cli tool which draws a tree of directory structure",
-	Long:  `go-tree is a cli tool which draws a tree of directory structure`,
+	Use:   "gotree",
+	Short: "gotree is a cli tool which draws a tree of directory structure",
+	Long:  `gotree is a cli tool which draws a tree of directory structure`,
 	Run: func(cmd *cobra.Command, args []string) {
 		internal.DrawTree(flags)
 	},

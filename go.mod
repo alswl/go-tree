@@ -1,6 +1,6 @@
 module github.com/alswl/go-tree
 
-go 1.23
+go 1.22
 
 require (
 	github.com/mattn/go-colorable v0.1.6

@@ -40,4 +40,4 @@ jobs:
         with:
           draft: true
           files: |
-            bin/go-tree-*-v*
+            bin/gotree-*-v*
